@@ -12,7 +12,7 @@ module.exports = function(grunt){
             // Paths below depends on the project's file structure
              files: [{
                  expand: true,
-                 cwd: 'structure/src/sass',
+                 cwd: 'structure/base/sass',
                     // working directory, where you edit your files
                  src: ['**/*.scss'],
                     // file types that the SASS compiler will look for
@@ -25,7 +25,7 @@ module.exports = function(grunt){
      },
       watch: {
           // whenever any scss file in sass is changed, grunt runs sass
-          files: 'structure/src/sass/**/*.scss',
+          files: 'structure/base/sass/**/*.scss',
           tasks: 'sass'
       }
   });
