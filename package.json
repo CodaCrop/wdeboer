@@ -1,0 +1,29 @@
+{
+  "name": "wboer_package",
+  "version": "1.0.0",
+  "description": "My personal webspace",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodaCrop/wdeboer.git"
+  },
+  "keywords": [
+    "Personal",
+    "Website",
+    "Showcase",
+    "Portfolio",
+    "AngularJS",
+    "Javascript",
+    "Sass",
+    "HTML"
+  ],
+  "author": "Wim de Boer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodaCrop/wdeboer/issues"
+  },
+  "homepage": "https://github.com/CodaCrop/wdeboer#readme"
+}
