@@ -1,0 +1,35 @@
+/*   LAYOUT AND ELEMENTS that are common
+=========================================== */
+.button-default {
+  @include btn-background($btn-primary-color);
+  @include btn-hover(true);
+}
+.section__content--recent,
+.section__content--about,
+.section__content--experiments,
+.section__content--blog {
+  @extend %section-default;
+}
+.section__content--about,
+.section__content--experiments,
+.section__content--blog {
+  @extend %section-skew-padding;
+}
+.section__content--recent {
+  @include section-outer($bg-primary-color, column, center, center, 670px);
+  @include section-inner(full-col);
+}
+.section__content--about {
+  @include angle(after, true);
+  @include section-outer($bg-primary-color, column, space-around, center);
+  @include section-inner(two-col);
+}
+.section__content--experiments {
+  @include angle(before, true);
+  @include section-outer($bg-secundary-color);
+  @include section-inner(three-col);
+}
+.section__content--blog {
+  @include section-outer($bg-secundary-color);
+  @include section-inner(full-row);
+}

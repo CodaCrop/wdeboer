@@ -1,0 +1,24 @@
+/*   LAYOUT AND ELEMENTS in footer
+=========================================== */
+.footer__outer {
+  background: $bg-secundary-color;
+  height: 400px;
+  width: 100%;
+}
+.footer__inner {
+  display: flex;
+  justify-content: center;
+}
+.footer__inner--col {
+  margin: 1.5rem;
+  width: 500px;
+  a {
+    color: $link-text-primary-color;
+  }
+  h1 {
+    color: $head-text-primary-color;
+  }
+  li {
+    color: $body-text-primary-color;
+  }
+}

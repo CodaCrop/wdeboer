@@ -1,5 +1,19 @@
 module.exports = function(grunt){
   grunt.initConfig({
+     jade: {
+       compile: {
+         options: {
+           pretty: true
+         },
+         files: [{
+           expand: true,
+           cwd: 'structure/base/jade',
+           src: ['**/*.jade', '!**/_*.jade'],
+           dest: 'structure/dist',
+           ext: '.html'
+         }]
+       }
+     },
      sass: {
          options: {
              outputStyle: 'compressed'  // - minified version
@@ -9,32 +23,31 @@ module.exports = function(grunt){
              // 'expanded' - single line per selector format
          },
          dist: {
-            // Paths below depends on the project's file structure
              files: [{
                  expand: true,
                  cwd: 'structure/base/sass',
-                    // working directory, where you edit your files
                  src: ['**/*.scss'],
-                    // file types that the SASS compiler will look for
                  dest: 'structure/dist/css',
-                    // where the resulting css file will go
                  ext: '.css'
-                    // the file type for the resulting file
              }]
          }
      },
       watch: {
-          // whenever any scss file in sass is changed, grunt runs sass
-          files: 'structure/base/sass/**/*.scss',
-          tasks: 'sass'
+          sass: {
+            files: ['structure/base/sass/**/*.scss'],
+            tasks: ['sass']
+          },
+          jade: {
+            files: ['structure/base/jade/**/*.jade'],
+            tasks: ['jade']
+          }
       }
   });
 
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jade');
 
-    grunt.registerTask('default', ['sass', 'watch']);
-    // when 'grunt watch' is executed from the command line,
-    // grunt will automatically run the tasks of executing sass
-    // and watch when the above specified files are changed.
+    grunt.registerTask('default', ['watch', 'sass', 'jade']);
+
 };

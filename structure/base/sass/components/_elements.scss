@@ -1,0 +1,62 @@
+/*   EXTENSIONS of elements
+=========================================== */
+%section-default {
+  width: 100%;
+  height: 300px;
+}
+%section-skew-padding {
+  padding-bottom: 100px;
+}
+
+/*   MIXINS of elements
+=========================================== */
+@mixin section-outer($bg:$primary-white, $fd:row, $jc:center, $ai:center, $height: 600px) {
+  display: flex;
+  background-color: $bg;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+  height: $height;
+}
+@mixin section-inner($layout) {
+  .section__inner {
+    height: 100%;
+    width: 100%;
+  }
+
+  @if $layout == 'full-col' {
+    .section__inner--col{
+      display: flex;
+    }
+  }
+  @if $layout == 'two-col' {
+    .section__inner {
+      display: flex;
+      justify-content: center;
+    }
+    .section__inner--object,
+    .section__inner--col {
+      width: 25%;
+      height: 10vh;
+      padding: 0 1.5rem;
+    }
+  }
+  @if $layout == 'three-col' {
+    .section__inner {
+      display: flex;
+    }
+    .section__inner--col {
+      width: 33.333%;
+    }
+  }
+  @if $layout == 'full-row' {
+    .section__inner {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .section__inner--body {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+/*   MAIN color codes
+=========================================== */
+$primary-white: #F7F5FB;
+$secundary-white: #D0CCD0;
+$primary-black: #0C1111;
+$primary-blue: #084887;
+$secundary-blue: #5EB1BF;
+$tertiary-blue: #CDEDF6;
+$primary-orange: #D90429;
+$secundary-orange: #D84727;
+$tertiary-orange: #F58A07;
+
+/*   ORDER of color
+=========================================== */
+// Buttons
+$btn-primary-color: #000;
+
+// Head text
+$head-text-primary-color: #CCC;
+$head-text-secundary-color: #CCC;
+$head-text-tertiary-color: #CCC;
+
+// Body text
+$body-text-primary-color: #000;
+$body-text-secundary-color: #000;
+
+// Link text
+$link-text-primary-color: #000;
+$link-text-secundary-color: #000;
+
+// Background
+$bg-primary-color: #FFF;
+$bg-secundary-color: #FFF;
+$bg-tertiary-color: #FFF;
+
+// Background on animations
+$bg-state-primary-color: purple;
+$bg-state-secundary-color: magenta;
+$bg-state-tertiary-color: pink;
+$bg-state-quaternary-color: lighten(pink, 0.5);

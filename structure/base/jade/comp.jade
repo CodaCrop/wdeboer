@@ -1,0 +1,60 @@
+doctype html
+html(lang='en')
+    head
+      meta(charset='utf-8')
+      title home
+      meta(name='description', content='Personal portfolio website containing projects and descriptions on these projects')
+      meta(name='title', content='Wdeboer | Web developer ++ UX developer ++ Web designer')
+      meta(name='author', content='Wim de Boer')
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')
+      link(rel='shortcut icon', href='.favicon.png')
+      link(href='https://fonts.googleapis.com/css?family=Open+Sans|Oswald', rel='stylesheet')
+      link(rel='stylesheet', type='text/css', href='css/comp.css')
+      link(rel='stylesheet', type='text/css', href='css/mobile.css')
+
+    body
+      include ./partials/_header.jade
+      #barba-wrapper
+        .barba-container
+          .hero__outer
+            .hero__inner
+              .hero__inner--content
+                h2.heading-2 Lorem ipsum dolor sit amet
+                h1.heading-1 Pickled gluten-free cronut, artisan tattooed pug wolf
+                p.paragraph.hero__text 
+                  |  8-bit forage salvia normcore raclette. Biodiesel cred kickstarter meggings, selfies you probably haven't heard of them yuccie.
+                button.button-default
+                  | vinegar
+            // !hero__inner
+          // !hero__outer
+          section.section__content--about
+            .section__inner
+              .section__inner--object
+                img(src='', alt='image')
+              .section__inner--col
+                h1 About Me
+                p
+                  | Heirloom church-key portland green juice, vice kitsch occupy craft beer sriracha narwhal. Offal green juice keytar quinoa chicharrones. Fap fashion axe succulents, vegan asymmetrical you probably haven't heard of them distillery air plant migas cornhole. Craft beer try-hard blog quinoa, lomo mixtape austin cray cronut letterpress ramps hexagon tbh forage.
+          // !section__content
+          section.section__content--experiments
+            .section__inner
+              .section__inner--col
+                .exp__item
+                  span.exp__image(style="background-image: url('assets/img/4.jpg')")
+              .section__inner--col
+                .exp__item
+                  span.exp__image(style="background-image: url('assets/img/3.jpg')")
+              .section__inner--col
+                .exp__item
+                  span.exp__image(style="background-image: url('assets/img/2.jpg')")
+          // !section__content
+          section.section__content--blog
+            | blog
+          // !section__content
+          // !Content
+          // Footer__content
+          include ./partials/_footer.jade
+        
+      script(src='vendor/js/velocity.min.js', type='text/javascript')
+      script(src='vendor/js/barba.min.js', type='text/javascript')
+      script(src='js/app.js', type='text/javascript')

@@ -1,0 +1,95 @@
+/*   EXTENSIONS of shapes (angles, rounded corners, etc.)
+=========================================== */
+%bg-image-full {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*   MIXINS of shapes (angles, rounded corners, etc.)
+=========================================== */
+@mixin rounded-corner($arc) {
+  -moz-border-radius: $arc;
+  -webkit-border-radius: $arc;
+  border-radius: $arc;
+}
+
+@mixin angle($pseudo, $flip: false, $angle: 3.5deg) {
+  @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
+    position: relative;
+    z-index: 1;
+    $selector: if($pseudo == 'both', '&:before,&:after', '&:#{$pseudo}');
+
+    #{$selector} {
+      background: inherit;
+      content: '';
+      position: absolute;
+      display: block;
+      height: 50%;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      -webkit-backface-visibility: hidden; // Chrome Windows jagged edge fix
+    }
+
+    @if $pseudo == 'before' {
+      #{$selector} {
+        top: 0;
+        @if $flip {
+          transform: skewY($angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 100% 0;
+        }
+      }
+    }
+
+    @if $pseudo == 'after' {
+      #{$selector} {
+        bottom: 0;
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 100%;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+
+    @if $pseudo == 'both' {
+      &:before {
+        top: 0;
+        @if $flip {
+          transform: skewY($angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 100% 0;
+        }
+      }
+
+      &:after {
+        bottom: 0;
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+  } @else {
+    // Remove skew on resizing
+    &:before {
+      transform: none;
+    }
+    &:after {
+      transform: none;
+    }
+  }
+}
