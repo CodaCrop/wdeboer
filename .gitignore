@@ -39,3 +39,6 @@ jspm_packages
 # SASS Preprocessor
 .sass-cache/
 *.css.map
+
+# Preprocessors
+structure/base/
