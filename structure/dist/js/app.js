@@ -96,4 +96,12 @@ window.onload = function() {
   Barba.Pjax.getTransition = function() {
     return Transition;
   }
+
+  // Parallax
+
+  // Image Trigger
+
+
+
+
 }
