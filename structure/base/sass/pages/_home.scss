@@ -1,0 +1,60 @@
+/*   LAYOUT AND ELEMENTS in home
+=========================================== */
+.hero__outer {
+  @include child-layout('fullscreen');
+}
+.hero__inner {
+  display: flex;
+  justify-content: center;
+  .panorama-wrap {
+    max-height: 600px;
+    width: 100%;
+    overflow-y: hidden;
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: red;
+      opacity: 0.8;
+      height: 100%;
+      left: 0;
+      right: 0;
+    }
+    .panorama-image {
+    }
+  }
+  .hero__inner--content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 600px;
+    max-height: 300px;
+    h1 {
+      color: $hero-head-primary;
+    }
+    h2 {
+      color: $hero-head-secundary;
+    }
+    p {
+      color: $hero-body-primary;
+    }
+  }
+}
+.case__item {
+  background-color: $bg-primary-color;
+}
+.case__item::after {
+  @include pseudo();
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  transition: all .3s ease 0s;
+  -webkit-transition: all .3s ease 0s;
+}
+.case__item:nth-child(1)::after { background-color: $bg-state-primary-color; }
+.case__item:nth-child(2)::after { background-color: $bg-state-secundary-color; }
+.case__item:nth-child(3)::after { background-color: $bg-state-tertiary-color; }
+.case__item:nth-child(4)::after { background-color: $bg-state-quaternary-color; }

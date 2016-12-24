@@ -1,0 +1,212 @@
+@import 'settings';
+
+/*   EXTENSIONS of animation
+=========================================== */
+%bg-shadow-default {
+  -webkit-box-shadow: 1px 10px 30px -22px rgba(0,0,0,0.5);
+  -moz-box-shadow: 1px 10px 30px -22px rgba(0,0,0,0.5);
+  box-shadow: 1px 10px 30px -22px rgba(0,0,0,0.5);
+  transition: box-shadow 0.25s ease-in-out;
+  &:hover {
+    -webkit-box-shadow: 5px 14px 43px -9px rgba(0,0,0,0.5);
+    -moz-box-shadow: 5px 14px 43px -9px rgba(0,0,0,0.5);
+    box-shadow: 5px 14px 43px -9px rgba(0,0,0,0.5);
+  }
+}
+%bg-ltr-animation {
+  &:before {
+    top: 0;
+    left: 0;
+    transform: skewX(-45deg) translateX(-100%);
+    -webkit-transform: skewX(-45deg) translateX(-100%);
+  }
+  &:hover::before {
+    transform: skewX(0) translateX(0%);
+    -webkit-transform: skewX(0) translateX(0%);
+  }
+}
+
+%bg-rtl-animation {
+  &:before {
+    top: 0;
+    right: 0;
+    transform: skewX(45deg) translateX(100%);
+    -webkit-transform: skewX(45deg) translateX(100%);
+  }
+  &:hover::before {
+    transform: skewX(0) translateX(0);
+    -webkit-transform: skewX(0) translateX(0);
+  }
+}
+/*   MIXINS of animation
+=========================================== */
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+   content: $content;
+   display: $display;
+   position: $pos;
+}
+
+@mixin menu-item-slide($ltr: false) {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.45rem;
+
+  @if($ltr) {
+    &:before {
+      @include pseudo;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 0;
+      transition: width 0s ease, background .5s ease;
+      -webkit-transition: width 0s ease, background .5s ease;
+    }
+    &:after {
+      @include pseudo;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      width: 0;
+      background-color: $btn-primary-color;
+      transition: width .5s ease;
+      -webkit-transition: width .5s ease;
+    }
+    &:hover::before {
+      width: 100%;
+      background-color: $btn-primary-color;
+      transition: width .5s ease;
+      -webkit-transition: width .5s ease;
+    }
+    &:hover::after {
+      width: 100%;
+      background-color: transparent;
+      transition: all 0s ease;
+      -webkit-transition: all 0s ease;
+    }
+  }
+}
+@mixin btn-hover($ltr: false) {
+  position: relative;
+  @if($ltr) {
+    &:before {
+      @include pseudo;
+      left: 0;
+      bottom: 0;
+      height: 100%;
+      width: 0;
+      transition: width 0s ease, background .5s ease;
+      -webkit-transition: width 0s ease, background .5s ease;
+    }
+    &:after {
+      @include pseudo;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      width: 0;
+      background-color: $btn-primary-color;
+      transition: width .5s ease;
+      -webkit-transition: width .5s ease;
+    }
+    &:hover {
+      color: $btn-text-primary-color;
+    }
+    &:hover::before {
+      width: 100%;
+      background-color: $btn-primary-color;
+      transition: width .5s ease;
+      -webkit-transition: width .5s ease;
+    }
+    &:hover::after {
+      width: 100%;
+      background-color: transparent;
+      transition: all 0s ease;
+      -webkit-transition: all 0s ease;
+    }
+  }
+}
+@mixin rollover-layout($type: 'ltr', $speed: .3s, $ease: ease,
+$bg-color: #000, $overlay-color: #FFF, $overlay-secundary-color: #F00,
+$text-color: #FFF, $opacity: 0.8) {
+
+  // Calc speed of animations
+  @include hardware;
+  $delay: $speed + .05;
+  $on-hover: $speed * 1.5;
+  $on-leave: $speed;
+
+  // Prevent animted element from overflowing
+  overflow-x: hidden;
+  background-color: $bg-color;
+
+  // Default setup image-overlay
+  .image-overlay {
+    display: flex;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    color: $text-color;
+    transition: transform $speed $ease, opacity $speed;
+    -webkit-transition: transform $speed $ease, opacity $speed;
+    transition-delay: 0s;
+    -webkit-transition-delay: 0s;
+    h1, p, button {
+      align-self: center;
+    }
+  }
+
+  // Set default pseudo width + height
+  &:before {
+    @include pseudo;
+    height: 100%;
+    width: 100%;
+    transform-origin: 0 0;
+  }
+
+  // Set elements of first image-overlay
+  &:first-of-type::before { background-color: $overlay-color; }
+  &:first-of-type {
+    h1, p, button {
+      align-self: flex-start;
+    }
+  }
+
+  // Checks on type of animation
+  @if($type == 'ltr') { // Left to right
+    align-items: center;
+
+    &:hover {
+      .image-overlay {
+        opacity: $opacity;
+        transform: translateX(10px);
+        transition-delay: $delay;
+        -webkit-transition-delay: $delay;
+      }
+    }
+
+    &:before {
+      background-color: $overlay-secundary-color;
+      transition: transform $on-leave;
+    }
+
+    &:hover::before { transition: transform $on-hover; }
+    @extend %bg-ltr-animation;
+  }
+  @if($type == 'rtl') { // Right to left
+    &:hover {
+      .image-overlay {
+        opacity: $opacity;
+        transform: translateX(10px);
+        transition-delay: $delay;
+        -webkit-transition-delay: $delay;
+      }
+    }
+    &:before {
+      background-color: $overlay-secundary-color;
+      transition: transform $on-leave; }
+    &:hover::before { transition: transform $on-hover; }
+    @extend %bg-rtl-animation;
+  }
+};
+/*   KEYFRAMES of animation
+=========================================== */

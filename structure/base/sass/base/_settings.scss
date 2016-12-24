@@ -1,0 +1,32 @@
+/*   FUNCTIONS of settings
+=========================================== */
+// Save classes or IDs with z-indexes to increment
+$z-indexes: (
+
+);
+
+@function z($name) {
+  @if index($z-indexes, $name) {
+    @return(length($z-indexes) - index($z-indexes, $name)) + 1;
+  } @else {
+    @return null;
+  }
+}
+
+/*   MIXINS of settings
+=========================================== */
+// Animation acceleration
+@mixin hardware($backface: true, $perspective: 1000) {
+  @if $backface {
+    backface-visibility: hidden;
+  }
+  perspective: $perspective;
+}
+
+// To prevent small texts to flex within container
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
