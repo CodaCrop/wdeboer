@@ -1,0 +1,60 @@
+.section__content {
+}
+.section__content--recent {
+  // @include angle('before');
+  @include parent-layout();
+  .section__inner {
+    @include child-layout('full');
+  }
+}
+.section__content--about {
+  @include parent-layout($direction: row, $y-align: center, $padding: 2rem 0);
+  .section__inner {
+    @include child-layout($layout: 'two-columns', $display: flex, $y: 100%,
+    $x: 1240px, $margin: 0 auto, $padding: 0 2rem);
+    .inner__story {
+      background: red;
+      color: white;
+    }
+    .main__col--left {
+      background: #FFF;
+    }
+    .section__inner--text {
+    }
+    .section__inner--image {
+      @include image-default;
+    }
+    .story__col--text, .main__col--left {
+      border-right: 1px solid #CCC;
+    }
+  }
+}
+.section__content--experiments {
+  background: #FFF;
+  @include parent-layout($x: 100vw, $y: 500px, $direction: column);
+  .section__inner {
+    @include child-layout($layout: 'five-masonry-reverse');
+    .section__inner--image {
+      height: 100%;
+    }
+    .image-container {
+      @include image-default;
+    }
+    .image-overlay {
+    }
+  }
+}
+.section__content--contact {
+  background: #F00;
+  @include parent-layout($x: 100vw, $y: 500px, $direction: column);
+  .section__inner {
+    @include child-layout($layout: 'full-centered', $display: flex, $x: 1240px,
+    $y: 100%, $margin: 0 auto, $padding: 0 2rem);
+  }
+}
+.section__content--blog {
+  @include parent-layout($direction: column);
+  .section__inner {
+    @include child-layout($layout: 'six-masonry');
+  }
+}

@@ -1,0 +1,25 @@
+/*   IMPORT - Load all external .scss
+files and combine it into one css file.
+=========================================== */
+@import 'base/animation';
+@import 'base/color';
+@import 'base/reset';
+@import 'base/settings';
+@import 'base/typography';
+
+@import 'components/buttons';
+@import 'components/form';
+@import 'components/navigation';
+@import 'components/shape';
+
+@import 'layout/elements';
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/image';
+@import 'layout/sections';
+@import 'layout/breakpoints';
+
+@import 'pages/about';
+@import 'pages/common';
+@import 'pages/contact';
+@import 'pages/home';

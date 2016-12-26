@@ -1,0 +1,56 @@
+/*   LAYOUT AND ELEMENTS in footer
+=========================================== */
+.footer__outer {
+  background: $bg-secundary-color;
+  .footer__inner {
+    @include parent-layout($x: 80vw, $y: 400px);
+    .footer__inner--col {
+      height: 90%;
+      @include child-layout('four-columns-and-row');
+        a {
+        color: $link-text-primary-color;
+        }
+        h1 {
+          padding: 3rem 0 1rem;
+          color: $body-text-secundary-color;
+        }
+        li {
+          color: $body-text-secundary-color;
+        }
+    }
+    .footer__inner--col:nth-of-type(2) {
+      li:first-child {
+        padding: 3rem 0 1rem;
+      }
+    }
+    .footer__inner--col:nth-of-type(3) {
+      span {
+        padding-right: 2rem;
+      }
+    }
+    .footer__inner--row {
+      display: flex;
+      width: 100%;
+      height: 10%;
+      color: #FFF;
+      .foot__logo {
+        order: 1;
+        padding-right: 2rem;
+      }
+      .sub__nav {
+        order: 2;
+        flex-grow: 2;
+        span {
+          padding-left: 2rem;
+        }
+      }
+      .foot__go-up {
+        order: 3;
+        flex-grow: 4;
+      }
+      .sub__partner {
+        order: 4;
+      }
+    }
+  }
+}

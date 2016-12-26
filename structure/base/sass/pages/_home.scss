@@ -1,0 +1,18 @@
+/*   LAYOUT AND ELEMENTS in home
+=========================================== */
+.case__item {
+  background-color: $bg-primary-color;
+}
+.case__item::after {
+  @include pseudo();
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  transition: all .3s ease 0s;
+  -webkit-transition: all .3s ease 0s;
+}
+.case__item:nth-child(1)::after { background-color: $bg-state-primary-color; }
+.case__item:nth-child(2)::after { background-color: $bg-state-secundary-color; }
+.case__item:nth-child(3)::after { background-color: $bg-state-tertiary-color; }
+.case__item:nth-child(4)::after { background-color: $bg-state-quaternary-color; }

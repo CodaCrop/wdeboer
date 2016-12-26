@@ -1,0 +1,12 @@
+/*   MIXINS of form
+=========================================== */
+@mixin form-layout() {
+  label {
+  
+  }
+  input[type=text] {
+    border: none;
+    line-height: 2.5rem;
+    padding: 0.2rem 1rem;
+  }
+}

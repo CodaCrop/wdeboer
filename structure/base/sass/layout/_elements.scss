@@ -1,0 +1,117 @@
+/*   EXTENSIONS of elements
+=========================================== */
+%full {
+  width: 100%;
+}
+%full-centered {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  @include form-layout();
+}
+%two-columns {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  &:first-child {
+    justify-content: flex-end;
+  }
+}
+%three-columns {
+  width: 33.333%;
+}
+%four-columns-and-row {
+  width: 25%;
+}
+%five-masonry {
+  width: 33.333%;
+  height: 50%;
+  @include rollover-layout($direction: 'ltr');
+  &:first-child {
+    height: 100%;
+  }
+}
+%five-masonry-reverse {
+  width: 33.333%;
+  height: 50%;
+  @include rollover-layout($direction: 'rtl');
+  &:last-child {
+    height: 100%;
+  }
+}
+%six-masonry {
+  width: 33.333%;
+}
+
+// Column styling (%two-columns)
+%inner-col-styling {
+  padding: 2rem 0;
+  .inner__story, .inner__main {
+    display: flex;
+    width: 100%;
+  }
+  .main__col--right, .story__col--focus {
+    width: 75%;
+  }
+  .main__col--left, .story__col--text {
+    width: 25%;
+    padding: 2rem;
+  }
+  .story__col--text, .story__col--focus {
+  }
+  .main__col--left {
+    margin-top: -50px;
+  }
+  .story__col--text {
+    padding-bottom: 5rem;
+  }
+  .main__col--right {
+    padding: 2rem;
+  }
+}
+
+
+/*   MIXINS of elements
+=========================================== */
+@mixin parent-layout($x: 100%, $y: 100%, $display: flex,
+$direction: null, $x-align: null, $y-align: null, $pos: relative,
+$margin: null, $padding: 0) {
+  position: $pos;
+  display: $display;
+  width: $x;
+  height: $y;
+  margin: $margin;
+  padding: $padding;
+  @if($display == flex) {
+    flex-wrap: wrap;
+    justify-content: $x-align;
+    align-items: $y-align;
+    flex-direction: $direction;
+    margin: 0 auto;
+  }
+}
+@mixin child-layout($layout, $display: null, $x: null, $y: null,
+$margin: null, $padding: 0, $pos: relative) {
+  width: $x;
+  height: $y;
+  margin: $margin;
+  padding: $padding;
+  position: $pos;
+  display: $display;
+  @if $display != null {
+    @if $display == flex {
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+  }
+  @if $layout != '' {
+    @if $layout == 'full' { @extend %full; }
+    @if $layout == 'full-centered' { @extend %full-centered; }
+    @if $layout == 'two-columns' { @extend %two-columns; @extend %inner-col-styling; }
+    @if $layout == 'three-columns' { @extend %three-columns; }
+    @if $layout == 'four-columns-and-row' { @extend %four-columns-and-row; }
+    @if $layout == 'five-masonry' { @extend %five-masonry; }
+    @if $layout == 'five-masonry-reverse' { @extend %five-masonry-reverse; }
+    @if $layout == 'six-masonry' { @extend %six-masonry; }
+  }
+}

@@ -1,0 +1,41 @@
+/*   LAYOUT AND ELEMENTS that are common
+=========================================== */
+.hero__outer {
+  @include child-layout('full');
+}
+.hero__inner {
+  display: flex;
+  justify-content: center;
+  .panorama-wrap {
+    max-height: 600px;
+    width: 100%;
+    overflow-y: hidden;
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: red;
+      opacity: 0.8;
+      height: 100%;
+      left: 0;
+      right: 0;
+    }
+    .panorama-image {
+      // Do something
+    }
+  }
+  .hero__inner--content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 600px;
+    max-height: 300px;
+    padding: 5rem 2rem;
+    h1 { color: $hero-head-primary; }
+    h2 { color: $hero-head-secundary; }
+    p { color: $hero-body-primary; }
+    button { margin-top: 1rem; }
+  }
+}

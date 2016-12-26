@@ -27,7 +27,7 @@
     <div id="barba-wrapper">
       <div class="barba-container">
         <div class="hero__outer">
-          <div class="hero__inner">
+          <div data-transition="test" class="hero__inner">
             <figure class="panorama-wrap"><img src="assets/img/5.jpg" alt="title" class="panorama-image"></figure>
             <div class="hero__inner--content">
               <h2 class="heading-2">Lorem ipsum dolor sit amet</h2>
@@ -42,25 +42,43 @@
           <!-- !hero__inner-->
         </div>
         <!-- !hero__outer -->
-        <section class="section__content--recent">
-          <div class="section__inner"><span style="background-image: url(&quot;#&quot;)"></span></div>
-          <div class="section__inner"><span style="background-image: url(&quot;#&quot;)"></span></div>
-          <div class="section__inner"><span style="background-image: url(&quot;#&quot;)"></span></div>
-          <div class="section__inner"><span style="background-image: url(&quot;#&quot;)"></span></div>
-        </section>
-        <section class="section__content--about">
+        <section class="section__content section__content--about">
           <div class="section__inner">
-            <div class="section__inner--image"><img src="" alt="image"></div>
-          </div>
-          <div class="section__inner">
-            <div class="section__inner--text">
-              <h1>About Me</h1>
-              <p>Heirloom church-key portland green juice, vice kitsch occupy craft beer sriracha narwhal. Offal green juice keytar quinoa chicharrones. Fap fashion axe succulents, vegan asymmetrical you probably haven't heard of them distillery air plant migas cornhole. Craft beer try-hard blog quinoa, lomo mixtape austin cray cronut letterpress ramps hexagon tbh forage.</p>
+            <div class="inner__story">
+              <div class="story__col--text"> 
+                <h1>Story</h1>
+                <p>Heirloom church-key portland green juice, vice kitsch occupy craft beer sriracha narwhal. Offal green juice keytar quinoa chicharrones. Fap fashion axe succulents, vegan asymmetrical you probably haven't heard of them distillery air plant migas cornhole. Craft beer try-hard blog quinoa, lomo mixtape austin cray cronut letterpress ramps hexagon tbh forage.</p>
+              </div>
+              <div class="story__col--focus"><img src="" alt="image"></div>
+            </div>
+            <div class="inner__main">
+              <div class="main__col--left">
+                <div class="section__inner--image"><img src="" alt="image"></div>
+              </div>
+              <div class="main__col--right">
+                <div class="section__inner--text">
+                  <h1>About Me</h1>
+                  <p>Heirloom church-key portland green juice, vice kitsch occupy craft beer sriracha narwhal. Offal green juice keytar quinoa chicharrones. Fap fashion axe succulents, vegan asymmetrical you probably haven't heard of them distillery air plant migas cornhole. Craft beer try-hard blog quinoa, lomo mixtape austin cray cronut letterpress ramps hexagon tbh forage.</p>
+                  <p>8-bit forage salvia normcore raclette. Biodiesel cred kickstarter meggings, selfies you probably haven't heard of them yuccie.</p>
+                </div>
+              </div>
+            </div>
+            <div class="inner__main">
+              <div class="main__col--left">
+                <div class="section__inner--image"><img src="" alt="image"></div>
+              </div>
+              <div class="main__col--right">
+                <div class="section__inner--text">
+                  <h1>About Me</h1>
+                  <p>Heirloom church-key portland green juice, vice kitsch occupy craft beer sriracha narwhal. Offal green juice keytar quinoa chicharrones. Fap fashion axe succulents, vegan asymmetrical you probably haven't heard of them distillery air plant migas cornhole. Craft beer try-hard blog quinoa, lomo mixtape austin cray cronut letterpress ramps hexagon tbh forage.</p>
+                  <p>8-bit forage salvia normcore raclette. Biodiesel cred kickstarter meggings, selfies you probably haven't heard of them yuccie.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
         <!-- !section__content-->
-        <section class="section__content--experiments">
+        <section class="section__content section__content--experiments">
           <div class="section__inner">
             <div class="section__inner--image"><span style="background-image: url(&quot;assets/img/1.jpg&quot;)" class="image-container"><span class="image-overlay">
                   <h1>1</h1>
@@ -92,67 +110,74 @@
                   <button class="button-default">vinegar</button></span></span></div>
           </div>
         </section>
-        <!-- !section__content-->
-        <section class="section__content--blog">
+        <section class="section__content section__content--contact">
           <div class="section__inner">
-            <div class="section__inner--text">
-              <h1>Blog 1</h1>
-              <p>text</p>
-            </div>
-          </div>
-          <div class="section__inner">
-            <div class="section__inner--text">
-              <h1>Blog 2</h1>
-              <p>text 2</p>
-            </div>
+            <h1>Want to work together?</h1>
+            <p>Letterpress pug cronut, kickstarter vaporware jean shorts jianbing kale chips tbh hella lo-fi cardigan swag.</p>
+            <form>
+              <label>Hoi
+                <input type="text" value="hoi">
+              </label>
+              <label>Hoi
+                <input type="text" value="hoi">
+              </label>
+            </form>
           </div>
         </section>
         <!-- !section__content-->
         <!-- !Content-->
-        <!-- Footer__content-->
-        <footer class="footer__outer">
-          <div class="footer__inner">
-            <div class="footer__inner--col">
-              <ul>
-                <li>
-                  <h1>Contact Info</h1>
-                </li>
-                <li></li>
-              </ul>
-            </div>
-            <div class="footer__inner--col">
-              <ul>
-                <li><a href="">wim.d.boer0172@gmail.com</a></li>
-                <li>
-                  <button class="button-default">Contact</button>
-                </li>
-              </ul>
-            </div>
-            <div class="footer__inner--col">
+      </div>
+      <!-- Footer__content-->
+      <footer class="footer__outer">
+        <div class="footer__inner">
+          <div class="footer__inner--col">
+            <ul>
+              <li>
+                <h1>Contact Info</h1>
+              </li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="footer__inner--col">
+            <ul>
+              <li><a href="">wim.d.boer0172@gmail.com</a></li>
+              <li>
+                <button class="button-default">Contact</button>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__inner--col">
+            <ul>
               <li>
                 <h1>Social Media</h1>
               </li>
               <li><span>in</span><span>tw</span><span>fa</span></li>
-            </div>
-            <div class="footer__inner--col">
+            </ul>
+          </div>
+          <div class="footer__inner--col">
+            <ul>
+              <li>
+                <h1>Address</h1>
+              </li>
+              <li>De Maalderij</li>
+              <li>Oude Nieuwveenseweg 118</li>
+              <li>Nieuwveen</li>
+              <li>2441 AB</li>
+            </ul>
+          </div>
+          <div class="footer__inner--row">
+            <div class="foot__logo">logo</div>
+            <div class="sub__nav">
               <ul>
-                <li>
-                  <h1>Address</h1>
-                </li>
-                <li>
-                  <p>
-                    De Maalderij
-                    Oude Nieuwveenseweg 118
-                    Nieuwveen
-                    2441 AB
-                  </p>
-                </li>
+                <li><span>Terms & Conditions</span><span>Privacy</span><span>Cookies</span></li>
               </ul>
             </div>
+            <div class="foot__go-up">^</div>
+            <div class="sub__partner">partner</div>
           </div>
-        </footer>
-        <!-- !footer__content-->
-      </div>
+        </div>
+      </footer>
+      <!-- !footer__content-->
     </div>
     <script src="vendor/js/barba.min.js" type="text/javascript"></script>
     <script src="js/app.js" type="text/javascript"></script>
