@@ -25,15 +25,14 @@ $breakpoints: (
   }
 }
 @include media-q("desktop-large", min) {
-
+  .section__content {
+    margin: 0 auto;
+    width: 1240px;
+  }
 }
 @include media-q("desktop-wide", min) {
   .section__content::before {
     content: none;
-  }
-  .section__content {
-    margin: 0 auto;
-    width: 1240px;
   }
 }
 @include media-q("desktop", max) {

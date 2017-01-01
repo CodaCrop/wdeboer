@@ -1,7 +1,8 @@
 /*   VARIABLES of typography
 =========================================== */
-$open-sans: 'Open Sans', sans-serif;
-$oswald: 'Oswald', sans-serif;
+$test: '../assets/font/CircularStd-Book.otf', sans-serif;
+$heading-font: 'Open Sans', sans-serif;
+$body-font: 'Oswald', sans-serif;
 $base-font-size: 1rem;
 $base-line-height: 1.25 * $base-font-size;
 
@@ -53,5 +54,5 @@ $type-settings: (
 .button-default { @include type-setting(-1); }
 
 // Default font-families
-h1,h2,h3,h4,h5,h6 { font-family: $oswald; }
-a, p, label {	font-family: $open-sans; padding: 1rem 0; }
+h1,h2,h3,h4,h5,h6 { font-family: $test; }
+a, p, label {	font-family: $test; }

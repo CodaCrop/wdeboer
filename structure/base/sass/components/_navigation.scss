@@ -1,0 +1,19 @@
+rect, polygon, circle {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 3;
+  transition: stroke .25s ease;
+  min-width: 50px;
+}
+rect:hover, polygon:hover, circle:hover {
+  stroke: green;
+}
+.default-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  li {
+    padding: 1rem 0;
+  }
+}

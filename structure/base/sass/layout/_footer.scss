@@ -3,7 +3,7 @@
 .footer__outer {
   background: $bg-secundary-color;
   .footer__inner {
-    @include parent-layout($x: 80vw, $y: 400px);
+    @include parent-layout($x: 80vw, $y: 400px, $margin: 0 auto);
     .footer__inner--col {
       height: 90%;
       @include child-layout('four-columns-and-row');

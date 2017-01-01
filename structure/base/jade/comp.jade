@@ -8,140 +8,193 @@ html(lang='en')
       meta(name='author', content='Wim de Boer')
       meta(name='viewport', content='width=device-width, initial-scale=1.0')
       link(rel='shortcut icon', href='.favicon.png')
-      link(href='https://fonts.googleapis.com/css?family=Open+Sans|Oswald', rel='stylesheet')
+      //link(href='https://fonts.googleapis.com/css?family=Open+Sans|Oswald', rel='stylesheet')
       link(rel='stylesheet', type='text/css', href='css/comp.css')
-      link(rel='stylesheet', type='text/css', href='css/mobile.css')
 
-    body
-      include ./partials/_header.jade
-      #barba-wrapper
-        .barba-container
-          .hero__outer
-            .hero__inner(data-transition='test')
-              figure.panorama-wrap
-                img.panorama-image(src="assets/img/5.jpg" alt="title")
-              .hero__inner--content
-                h2.heading-2 Lorem ipsum dolor sit amet
-                h1.heading-1 Pickled gluten-free cronut, artisan tattooed pug wolf
-                p.paragraph.hero__text 
-                  |  8-bit forage salvia normcore raclette. Biodiesel cred kickstarter meggings, selfies you probably haven't heard of them yuccie.
-                button.button-default
-                  | vinegar
-            // !hero__inner
-          // !hero__outer 
-          //-
-            section.section__content.section__content--recent
+    body.work-layer-closed.loaded
+      #page
+        header logo
+        nav.default-menu
+          ul
+            li
+              a(href="#")
+                svg(height="30px")  
+                  rect(x="17" y="8" width="20" height="20")
+            li
+              a(href="#")
+                svg(height="30px")
+                  polygon(points="27 5, 38 25, 16 25")
+            li
+              a(href="#")
+                svg(height="30px")
+                  circle(cx="27", cy="14" r="10")
+        .default-layout
+          .intro-section
+            .row
+              .col-12
+                .intro-text
+                  h1.title hi I'm Wim — designer & coder
+                  h2.subtitle
+                    | I love creating useful and beautiful things for people
+                    br
+                    | see my latest <a href="work-section">work</a>
+          .work-section
+            .row
+              .col-12
+                h2.section-title my work
+            .row
+              .col-6.project-area
+          .about-section
+            .row
+              .col-12
+                h2.section-title about me
+            .row
+              .col-4.about-img
+              .col-6.about-text
+          .contact-section
+            .row
+              .col-12
+                h2.section-title contact me
+            .row
+              .col-4.follow-text
+              .col-6.contact-form
+        .work-layout.closed
+        footer
+      //include ./partials/_header.jade
+      //-
+        #page
+          .wrapper
+            .hero__outer
+              .hero__inner
+                figure.panorama-wrap
+                  img.panorama-image(src="assets/img/5.jpg" alt="title")
+                .hero__inner--content
+                  h2.heading-2 Lorem ipsum dolor sit amet
+                  h1.heading-1 Pickled gluten-free cronut, artisan tattooed pug wolf
+                  p.paragraph.hero__text 
+                    |  8-bit forage salvia normcore raclette. Biodiesel cred kickstarter meggings, selfies you probably haven't heard of them yuccie.
+                  button.button-default
+                    | vinegar
+              // !hero__inner
+            // !hero__outer 
+            //-
+              section.section__content.section__content--recent
+                .section__inner
+                  span(style='background-image: url("#")')
+                .section__inner
+                  span(style='background-image: url("#")')
+                .section__inner
+                  span(style='background-image: url("#")')
+                .section__inner
+                  span(style='background-image: url("#")')
+            section.section__content.section__content--about
               .section__inner
-                span(style='background-image: url("#")')
-              .section__inner
-                span(style='background-image: url("#")')
-              .section__inner
-                span(style='background-image: url("#")')
-              .section__inner
-                span(style='background-image: url("#")')
-          section.section__content.section__content--about
-            .section__inner
-              .inner__story
-                .story__col--text 
-                  h1 Story
-                  p
-                    | Heirloom church-key portland green juice, vice kitsch occupy craft beer sriracha narwhal. Offal green juice keytar quinoa chicharrones. Fap fashion axe succulents, vegan asymmetrical you probably haven't heard of them distillery air plant migas cornhole. Craft beer try-hard blog quinoa, lomo mixtape austin cray cronut letterpress ramps hexagon tbh forage.
-                .story__col--focus
-                  img(src='', alt='image')  
-              .inner__main
-                .main__col--left
-                  .section__inner--image
-                    img(src='', alt='image')
-                .main__col--right
-                  .section__inner--text
-                    h1 About Me
+                .inner__story
+                  .story__col--text 
+                    h1 Story
                     p
                       | Heirloom church-key portland green juice, vice kitsch occupy craft beer sriracha narwhal. Offal green juice keytar quinoa chicharrones. Fap fashion axe succulents, vegan asymmetrical you probably haven't heard of them distillery air plant migas cornhole. Craft beer try-hard blog quinoa, lomo mixtape austin cray cronut letterpress ramps hexagon tbh forage.
-                    p
-                      | 8-bit forage salvia normcore raclette. Biodiesel cred kickstarter meggings, selfies you probably haven't heard of them yuccie.
-              .inner__main
-                .main__col--left
-                  .section__inner--image
-                    img(src='', alt='image')
-                .main__col--right
+                  .story__col--focus
+                    img(src='', alt='image')  
+                .inner__main
+                  .main__col--left
+                    .section__inner--image
+                      img(src='', alt='image')
+                  .main__col--right
+                    .section__inner--text
+                      h1 About Me
+                      p
+                        | Heirloom church-key portland green juice, vice kitsch occupy craft beer sriracha narwhal. Offal green juice keytar quinoa chicharrones. Fap fashion axe succulents, vegan asymmetrical you probably haven't heard of them distillery air plant migas cornhole. Craft beer try-hard blog quinoa, lomo mixtape austin cray cronut letterpress ramps hexagon tbh forage.
+                      p
+                        | 8-bit forage salvia normcore raclette. Biodiesel cred kickstarter meggings, selfies you probably haven't heard of them yuccie.
+                .inner__main
+                  .main__col--left
+                    .section__inner--image
+                      img(src='', alt='image')
+                  .main__col--right
+                    .section__inner--text
+                      h1 About Me
+                      p
+                        | Heirloom church-key portland green juice, vice kitsch occupy craft beer sriracha narwhal. Offal green juice keytar quinoa chicharrones. Fap fashion axe succulents, vegan asymmetrical you probably haven't heard of them distillery air plant migas cornhole. Craft beer try-hard blog quinoa, lomo mixtape austin cray cronut letterpress ramps hexagon tbh forage.
+                      p
+                        | 8-bit forage salvia normcore raclette. Biodiesel cred kickstarter meggings, selfies you probably haven't heard of them yuccie.
+            // !section__content
+            section.section__content.section__content--experiments
+              .section__inner
+                .section__inner--image
+                  span.image-container(style='background-image: url("assets/img/1.jpg")')
+                    span.image-overlay
+                      h1 1
+                      p
+                        | 1
+                      button.button-default
+                        | vinegar
+              .section__inner
+                .section__inner--image
+                  span.image-container(style='background-image: url("assets/img/2.jpg")')
+                    span.image-overlay
+                      h1 2
+                      p
+                        | 2
+                      button.button-default
+                        | vinegar
+              .section__inner
+                .section__inner--image
+                  span.image-container(style='background-image: url("assets/img/3.jpg")')
+                    span.image-overlay
+                      h1 3
+                      p
+                        | 3
+                      button.button-default
+                        | vinegar
+              .section__inner
+                .section__inner--image
+                  span.image-container(style='background-image: url("assets/img/4.jpg")')
+                    span.image-overlay
+                      h1 4
+                      p
+                        | 4
+                      button.button-default
+                        | vinegar
+              .section__inner
+                .section__inner--image
+                  span.image-container(style='background-image: url("assets/img/5.jpg")')
+                    span.image-overlay
+                      h1 5
+                      p
+                        | 5
+                      button.button-default
+                        | vinegar
+            section.section__content.section__content--contact
+              .section__inner
+                .inner__line
+                  h1 Want to work together?
+                .inner__line
+                  p Letterpress pug cronut, kickstarter vaporware jean shorts jianbing kale chips tbh hella lo-fi cardigan swag.
+                .inner__line
+                  form
+                    label(for="name")
+                      input(type="text" name="name" placeholder="Name" onfocus="this.placeholder=''" onblur="this.placeholder='Name'")
+                    label(for="email")
+                      input(type="text" name="email" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder='Email'")
+                    label(for="saywhat")
+                      textarea(rows="4" name="saywhat" placeholder="How can I help you?" onfocus="this.placeholder=''" onblur="this.placeholder='How can I help you?'")
+            //-
+              section.section__content.section__content--blog
+                .section__inner
                   .section__inner--text
-                    h1 About Me
+                    h1 Blog 1
                     p
-                      | Heirloom church-key portland green juice, vice kitsch occupy craft beer sriracha narwhal. Offal green juice keytar quinoa chicharrones. Fap fashion axe succulents, vegan asymmetrical you probably haven't heard of them distillery air plant migas cornhole. Craft beer try-hard blog quinoa, lomo mixtape austin cray cronut letterpress ramps hexagon tbh forage.
+                      | text
+                .section__inner
+                  .section__inner--text
+                    h1 Blog 2
                     p
-                      | 8-bit forage salvia normcore raclette. Biodiesel cred kickstarter meggings, selfies you probably haven't heard of them yuccie.
-          // !section__content
-          section.section__content.section__content--experiments
-            .section__inner
-              .section__inner--image
-                span.image-container(style='background-image: url("assets/img/1.jpg")')
-                  span.image-overlay
-                    h1 1
-                    p
-                      | 1
-                    button.button-default
-                      | vinegar
-            .section__inner
-              .section__inner--image
-                span.image-container(style='background-image: url("assets/img/2.jpg")')
-                  span.image-overlay
-                    h1 2
-                    p
-                      | 2
-                    button.button-default
-                      | vinegar
-            .section__inner
-              .section__inner--image
-                span.image-container(style='background-image: url("assets/img/3.jpg")')
-                  span.image-overlay
-                    h1 3
-                    p
-                      | 3
-                    button.button-default
-                      | vinegar
-            .section__inner
-              .section__inner--image
-                span.image-container(style='background-image: url("assets/img/4.jpg")')
-                  span.image-overlay
-                    h1 4
-                    p
-                      | 4
-                    button.button-default
-                      | vinegar
-            .section__inner
-              .section__inner--image
-                span.image-container(style='background-image: url("assets/img/5.jpg")')
-                  span.image-overlay
-                    h1 5
-                    p
-                      | 5
-                    button.button-default
-                      | vinegar
-          section.section__content.section__content--contact
-            .section__inner
-              h1 Want to work together?
-              p Letterpress pug cronut, kickstarter vaporware jean shorts jianbing kale chips tbh hella lo-fi cardigan swag.
-              form
-                label Hoi
-                  input(type="text" value="hoi")
-                label Hoi
-                  input(type="text" value="hoi")
-          //-
-            section.section__content.section__content--blog
-              .section__inner
-                .section__inner--text
-                  h1 Blog 1
-                  p
-                    | text
-              .section__inner
-                .section__inner--text
-                  h1 Blog 2
-                  p
-                    | text 2
-          // !section__content
-          // !Content
-        // Footer__content
+                      | text 2
+            // !section__content
+            // !Content
+          // Footer__content
         include ./partials/_footer.jade
-      //script(src='https://unpkg.com/vue/dist/vue.js')
+      script(src='https://unpkg.com/vue/dist/vue.js')
       script(src='vendor/js/barba.min.js', type='text/javascript')
       script(src='js/app.js', type='text/javascript')

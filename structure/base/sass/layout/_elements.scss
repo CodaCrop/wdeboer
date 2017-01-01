@@ -77,33 +77,28 @@
 $direction: null, $x-align: null, $y-align: null, $pos: relative,
 $margin: null, $padding: 0) {
   position: $pos;
-  display: $display;
   width: $x;
   height: $y;
   margin: $margin;
   padding: $padding;
-  @if($display == flex) {
-    flex-wrap: wrap;
-    justify-content: $x-align;
-    align-items: $y-align;
-    flex-direction: $direction;
-    margin: 0 auto;
-  }
+  display: $display;
+  flex-wrap: wrap;
+  justify-content: $x-align;
+  align-items: $y-align;
+  flex-direction: $direction;
 }
 @mixin child-layout($layout, $display: null, $x: null, $y: null,
-$margin: null, $padding: 0, $pos: relative) {
+$margin: null, $padding: 0, $direction: null, $x-align: null,
+$y-align: null, $pos: relative) {
   width: $x;
   height: $y;
   margin: $margin;
   padding: $padding;
   position: $pos;
+  flex-direction: $direction;
   display: $display;
-  @if $display != null {
-    @if $display == flex {
-      flex-direction: column;
-      flex-wrap: wrap;
-    }
-  }
+  justify-content: $y-align;
+  align-items: $x-align;
   @if $layout != '' {
     @if $layout == 'full' { @extend %full; }
     @if $layout == 'full-centered' { @extend %full-centered; }

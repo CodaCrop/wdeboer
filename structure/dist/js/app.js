@@ -1,7 +1,4 @@
 window.onload = function() {
-  Barba.Pjax.start();
-  Barba.Prefetch.init();
-
   // Define barba properties
   Barba.transitionLength = 500;
 
@@ -15,14 +12,11 @@ window.onload = function() {
 
       document.body.style.overflow = 'hidden';
 
-      ////////////////////////////
       // Setup
-      ////////////////////////////
       var transitionLength = parseInt(Barba.transitionLength),
           transitionTimeout = 100,
           transitionLengthSeconds = (transitionLength / 1000) + 's',
           transitionSelector = 'data-transition';
-      ////////////////////////////
 
       // Set the animation time on all elements
       var allAnimationElements = document.querySelectorAll('[' + transitionSelector + ']');
@@ -97,11 +91,14 @@ window.onload = function() {
     return Transition;
   }
 
+  Barba.Pjax.Dom.containerClass = 'default-layout';
+  Barba.Pjax.Dom.wrapperId = 'page';
+
+  Barba.Prefetch.init();
+  Barba.Pjax.start();
+
   // Parallax
 
   // Image Trigger
-
-
-
 
 }

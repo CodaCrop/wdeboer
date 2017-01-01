@@ -1,0 +1,24 @@
+.col-12 {width:100%;}
+.col-11 {width:91.666%;}
+.col-10 {width:83.333%;}
+.col-9 {width:74.999%;}
+.col-8 {width:66.666%;}
+.col-7 {width:58.333%;}
+.col-6 {width:50%;}
+.col-5 {width:41.666%;}
+.col-4 {width:33.333%;}
+.col-3 {width: 24.999%}
+.col-2 {width:16.666%;}
+.col-1 {width:8.333%;}
+.row {
+  display:flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  margin-right: -1rem;
+  margin-left: -1rem;
+}
+.default-layout {
+  transition: all .2s cubic-bezier(0.13, 0.37, 0.24, 1);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
